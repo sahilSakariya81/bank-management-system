@@ -144,7 +144,35 @@ GET /transactions/{ac_no}
 
 ## How to Run the Project
 
-1. Clone the repository:
+1. Clone the repository
 
-```bash
-git clone https://github.com/yourusername/bank-management-system.git
+git clone https://github.com/sahilsakariya81/bank-management-system.git
+
+2. Open the project in **IntelliJ / Eclipse**
+
+3. Configure database in `application.properties`
+
+4. Add Twilio credentials for SMS and WhatsApp service
+
+5. Configure email settings for mail service
+
+6. Run the Spring Boot application
+
+---
+
+## Future Improvements
+
+* Add authentication and authorization
+
+* Add account statement PDF generation
+
+* Add daily account summary emails
+
+* Implement multi-currency support
+
+* Add admin panel for monitoring transactions
+
+---
+
+## Author
+Sahil Sakariya
