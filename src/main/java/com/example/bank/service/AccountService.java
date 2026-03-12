@@ -10,6 +10,7 @@ import com.example.bank.repository.AccountRepository;
 import com.example.bank.repository.StatementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,6 +35,7 @@ public class AccountService {
         accountRepository.save(a);
     }
 
+    @Transactional
     public void withdrewAmount(TransactionDTO dto) {
 
         AccountModel account = accountRepository.findById(dto.getAcNo()).orElse(null);
@@ -58,6 +60,7 @@ public class AccountService {
 
     }
 
+    @Transactional
     public void depositeAmount(TransactionDTO dto) {
         AccountModel account = accountRepository.findById(dto.getAcNo()).orElseThrow();
         account.setBalance(account.getBalance() + dto.getAmount());
@@ -74,6 +77,7 @@ public class AccountService {
 
     }
 
+    @Transactional
     public void transferAmount(TransferDTO dto) {
 
         AccountModel sender = accountRepository.findById(dto.getSenderAc()).orElseThrow();
